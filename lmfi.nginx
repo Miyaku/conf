@@ -1,0 +1,7 @@
+server
+    {
+        listen 80;
+        #listen [::]:80;
+        server_name lmfi.tk lmfi.ml lmfi.cf lmfi.ga lmfi.gq;
+		rewrite ^/(.*)$ https://links.mifans.web.id/ permanent;
+    }

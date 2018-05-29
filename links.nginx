@@ -1,0 +1,25 @@
+#ignored: condition 0
+if ($rule_0 = "1"){
+	rewrite ^/.*$ https://$server_name$uri redirect;
+}
+if ($http_host ~* "^links.mifans.web.id$"){
+	set $rule_1 1$rule_1;
+}
+if ($rule_1 = "1"){
+	rewrite ^/t/(.*)$ http://mifans.web.id/threads/$1 last;
+}
+	rewrite ^/m/(.*)$ http://mifans.web.id/members/$1 last;
+	rewrite ^/r/(.*)$ http://mifans.web.id/resources/$1 last;
+	rewrite ^/p/(.*)$ http://mifans.web.id/posts/$1 last;
+	rewrite ^/s/(.*)$ http://mifans.web.id/search/?q=$1 last;
+	rewrite ^/pp/(.*)$ http://mifans.web.id/profile-posts/$1 last;
+	rewrite ^/f/(.*)$ http://mifans.web.id/forums/$1 last;
+if (!-f $request_filename){
+	set $rule_8 1$rule_8;
+}
+if (!-d $request_filename){
+	set $rule_8 2$rule_8;
+}
+if ($rule_8 = "21"){
+	rewrite /. /index.php last;
+}

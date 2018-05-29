@@ -1,0 +1,28 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^forum\.mifans\.web\.id$ [NC]
+#RewriteRule ^$ http://mifans.web.id/$1 [R=301,L]
+RewriteRule ^@twitter$ http://twitter.com/mifansindonesia$1 [R=301,L]
+RewriteRule ^status$ http://status.mifans.web.id$1 [R=301,L]
+RewriteRule ^links$ http://links.mifans.web.id$1 [R=301,L]
+RewriteRule ^rss$ http://mifans.web.id/forums/-/index.rss [R=301,L]
+RewriteRule ^wt$ http://mifans.web.id/watched/threads [R=301,L]
+RewriteRule ^wf$ http://mifans.web.id/watched/forums [R=301,L]
+RewriteRule ^fnp$ http://mifans.web.id/find-new/posts [R=301,L]
+RewriteRule ^c$ http://mifans.web.id/conversations/ [R=301,L]
+RewriteRule ^o$ http://mifans.web.id/online/ [R=301,L]
+RewriteRule ^a/(.*)$ http://mifans.web.id/account/$1 [NC,L]
+RewriteRule ^t/(.*)$ http://mifans.web.id/threads/$1 [NC,L]
+RewriteRule ^m/(.*)$ http://mifans.web.id/members/$1 [NC,L]
+RewriteRule ^f/(.*)$ http://mifans.web.id/members/$1 [NC,L]
+RewriteRule ^r/(.*)$ http://mifans.web.id/resources/$1 [NC,L]
+RewriteRule ^p/(.*)$ http://mifans.web.id/posts/$1 [NC,L]
+RewriteRule ^s/(.*)$ http://mifans.web.id/search/?q=$1 [NC,L]
+RewriteRule ^pp/(.*)$ http://mifans.web.id/profile-posts/$1 [NC,L]
+RewriteRule ^f/(.*)$ http://mifans.web.id/forums/$1 [NC,L]
+RewriteRule ^h/(.*)$ http://mifans.web.id/h/$1 [NC,L]
+RewriteRule ^l/(.*)$ http://links.mifans.web.id/$1 [NC,L]
+
+ErrorDocument 404 index.html
+#ErrorDocument 403 index.html
+#ErrorDocument 503 index.html
+#ErrorDocument 501 index.html
